@@ -1,3 +1,4 @@
+import { loadCategories } from './../../../store/actions/categories.actions';
 import { AppState } from './../../../store/index';
 import { CategoriesService } from './../../../services/categories.service';
 import { Observable } from 'rxjs';
@@ -18,10 +19,11 @@ export class SubHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loadData()
+    this.loadData();
   }
 
   loadData() {
+    this._store.dispatch(loadCategories());
     this.categories$ = this._categoriesService.getAllProductsCategories();
   }
 

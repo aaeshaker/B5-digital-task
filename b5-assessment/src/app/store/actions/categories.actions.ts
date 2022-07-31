@@ -4,12 +4,12 @@ export const loadCategories = createAction(
   '[Categories] Load Categories'
 );
 
-export const loadCategoriesSuccess = createAction(
-  '[Categories] Load Categories Success',
-  props<{ data: any }>()
-);
+// export const loadCategoriesSuccess = createAction(
+//   '[Categories] Load Categories Success',
+//   props<{ data: any }>()
+// );
 
-export const loadCategoriesFailure = createAction(
-  '[Categories] Load Categories Failure',
-  props<{ error: any }>()
-);
+// export const loadCategoriesFailure = createAction(
+//   '[Categories] Load Categories Failure',
+//   props<{ error: any }>()
+// );
