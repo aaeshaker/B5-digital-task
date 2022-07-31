@@ -6,7 +6,8 @@
   <div class="sub-header-search d-flex align-items-center justify-content-between">
     <select class="form-select sub-header-select bold cursor-pointer">
       <option selected>All categories</option>
-      <option value="1">Drinks</option>
+      <option *ngFor="let category of categories$ | async; let i = index" value="i+1">
+        {{ category }}</option>
     </select>
     <input class="sub-header-search-input" type="search" placeholder="Search Products, categories ...">
     <img class="img-fit" src="assets/images/search-icon.svg" alt="search icon">

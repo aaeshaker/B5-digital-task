@@ -1,3 +1,5 @@
+import { CategoriesService } from './../../../services/categories.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sub-header.component.scss']
 })
 export class SubHeaderComponent implements OnInit {
+  public categories$!: Observable<string[]>;
 
-  constructor() { }
+  constructor(private _categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
+    this.loadData()
+  }
+
+  loadData() {
+    this.categories$ = this._categoriesService.getAllProductsCategories();
   }
 
 }
